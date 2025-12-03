@@ -1,0 +1,31 @@
+.net-worth-chart {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+  border: 1px solid #2a2a2a;
+
+  &.empty {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+  }
+
+  h3 {
+    margin: 0 0 20px 0;
+    color: #e0e0e0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  // Dark theme styles for Recharts
+  .recharts-cartesian-axis-tick-value {
+    fill: #b0b0b0;
+  }
+
+  .recharts-legend-item-text {
+    color: #e0e0e0 !important;
+  }
+}
+

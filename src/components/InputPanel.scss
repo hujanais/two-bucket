@@ -1,0 +1,115 @@
+.input-panel {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+  border: 1px solid #2a2a2a;
+
+  h2 {
+    margin: 0 0 20px 0;
+    color: #e0e0e0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 24px 0 16px 0;
+    color: #e0e0e0;
+    font-size: 18px;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 20px;
+  }
+
+  .info-text {
+    margin: 12px 0 0 0;
+    padding: 12px;
+    background: rgba(99, 102, 241, 0.15);
+    border-left: 3px solid #6366f1;
+    border-radius: 4px;
+    color: #c0c0c0;
+    font-size: 14px;
+  }
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-weight: 500;
+      color: #b0b0b0;
+      font-size: 14px;
+    }
+
+    input {
+      padding: 8px 12px;
+      border: 1px solid #3a3a3a;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #252525;
+      color: #e0e0e0;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      }
+
+      &:hover {
+        border-color: #4a4a4a;
+      }
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.btn-primary {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    &.btn-secondary {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border: 1px solid #3a3a3a;
+
+      &:hover {
+        background: #333333;
+        border-color: #4a4a4a;
+      }
+    }
+  }
+}
+
