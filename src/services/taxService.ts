@@ -155,7 +155,8 @@ export function calculateTaxes(info: TaxpayerInfo, stateBrackets: TaxBracket[]):
   const federalTax = calculateProgressiveTax(federalTaxableIncome, federalBrackets);
 
   // 4. Calculate State Taxable Income (often the same as Federal AGI or slightly adjusted)
-  const stateTaxableIncome = Math.max(0, info.grossIncome - deductionAmount); // States may have different rules
+  const stateDeduction = 0; // States may have different rules - for now, we'll assume no deductions
+  const stateTaxableIncome = Math.max(0, info.grossIncome - stateDeduction); 
 
   // 5. Calculate State Tax Owed (state brackets are the same regardless of filing status for MA)
   const stateTax = calculateProgressiveTax(stateTaxableIncome, stateBrackets);

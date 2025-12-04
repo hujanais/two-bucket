@@ -1,6 +1,7 @@
 import type { InputParams } from '../models/InputParams';
 import type { YearlyData } from '../models/YearlyData';
 import type { YearlyUserInputs } from '../models/UserInputs';
+import { calculateTaxes, MASSACHUSETTS_BRACKET } from './taxService';
 
 export class SimulationService {
   static calculateYearlyData(
@@ -56,7 +57,17 @@ export class SimulationService {
       }
 
       const totalIncome = rentalIncome + income1 + income2 + ss1 + ss2;
-      const annualNeed = (totalExpenses - totalIncome) * (1 + params.effectiveTaxRate);
+      let annualNeed = (totalExpenses - totalIncome)
+      
+      // For simplicity, just calculate the tax burden and add it to the annual need
+      const taxResult = calculateTaxes({
+        grossIncome: totalExpenses,
+        filingStatus: 'married',
+        itemizedDeductions: 0
+      }, MASSACHUSETTS_BRACKET);
+
+      annualNeed = annualNeed + taxResult.totalTax;
+      const effectiveTaxRate = taxResult.totalTax / totalExpenses;
       
       // Calculate actual cash threshold based on annual need
       // Use absolute value to handle both positive and negative annual need
@@ -118,7 +129,7 @@ export class SimulationService {
         income2,
         ss1,
         ss2,
-        effectiveTaxRate: params.effectiveTaxRate,
+        effectiveTaxRate: effectiveTaxRate,
         totalIncome,
         annualNeed,
         cash,

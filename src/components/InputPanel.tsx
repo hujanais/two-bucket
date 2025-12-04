@@ -148,17 +148,6 @@ export function InputPanel({ params, onUpdate, onSave, onLoad }: InputPanelProps
           />
         </div>
         <div className="input-group">
-          <label>Effective Tax Rate (%)</label>
-          <input
-            type="number"
-            value={formatPercentage(localParams.effectiveTaxRate)}
-            onChange={(e) => handlePercentageChange('effectiveTaxRate', e.target.value)}
-            min="0"
-            max="100"
-            step="0.01"
-          />
-        </div>
-        <div className="input-group">
           <label>Stock Return Rate (%)</label>
           <input
             type="number"

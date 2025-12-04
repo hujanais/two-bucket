@@ -8,7 +8,6 @@ export interface InputParams {
   ss2Amount: number;
   ss2StartAge: number;
   colaPercentage: number;
-  effectiveTaxRate: number;
   stockReturnRate: number;
   cashThreshold: number;
   baseAnnualExpense: number;
@@ -26,7 +25,6 @@ export const defaultInputParams: InputParams = {
   ss2Amount: 2500, // Monthly amount
   ss2StartAge: 65,
   colaPercentage: 0.02,
-  effectiveTaxRate: 0.15,
   stockReturnRate: 0.065,
   cashThreshold: 2, // Number of years of annual need
   baseAnnualExpense: 50000,

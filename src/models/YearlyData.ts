@@ -11,7 +11,7 @@ export interface YearlyData {
   income2: number;
   ss1: number;
   ss2: number;
-  effectiveTaxRate: number;
+  effectiveTaxRate: number; // Calculated tax rate (totalTax / grossIncome)
   totalIncome: number;
   annualNeed: number;
   cash: number;
